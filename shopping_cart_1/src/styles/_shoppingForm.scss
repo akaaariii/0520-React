@@ -1,0 +1,26 @@
+form {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+
+    div {
+        display: flex;
+        flex-direction: column;
+    }
+}
+label {
+    margin-bottom: 3px;
+}
+.addBtn {
+    background-color: $btn_color;
+    color: $white;
+    border: none;
+    font-weight: bold;
+    padding: $default_pad;
+    border-radius: 5%;
+    cursor: pointer;
+}
+.error {
+    text-align: center;
+    color: $warning_color;
+}
