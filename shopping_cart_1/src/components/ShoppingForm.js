@@ -32,6 +32,9 @@ class ShoppingForm extends Component {
         this.setState(() => {
             return {error : err}
         })
+        if(!err) {
+            e.target.elements.quantity.value = '';
+        }
     }
 
     render() {
@@ -48,7 +51,10 @@ class ShoppingForm extends Component {
                         <label>Quantity:</label>
                         <input type="number" name="quantity" placeholder="Enter the quantity"></input>
                     </div>
-                    <button type="submit" className="addBtn" onClick={this.addItems}>Add to Cart</button>
+                    <div>
+                        <button type="submit" className="button_add" onClick={this.addItems}>Add to Cart</button>
+                        <button type="reset" className="button_remove_all" onClick={() => this.props.handleRemoveAll()}>Remove All</button>
+                    </div>
                 </form>
             </div>
         )

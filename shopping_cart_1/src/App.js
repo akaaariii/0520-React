@@ -19,14 +19,29 @@ class App extends Component {
         })
     }
 
+    handleRemoveAll = () => {
+        this.setState(() => {
+            return {cart : []}
+        })
+    }
+
+    handleRemoveItem = (index) => {
+        console.log(index)
+        this.setState((prevState) => {
+            return {cart : prevState.cart.filter((row, i) => i !== index)}
+        })
+    }
+
     render() {
         const {cart} = this.state;
         return (
             <div className="container">
                 <Header />
                 <main>
-                    <ShoppingForm handleSubmitForm = {this.handleSubmitForm} />
-                    <ShoppingCart cartArr = {cart}/>
+                    <ShoppingForm handleSubmitForm = {this.handleSubmitForm}
+                                  handleRemoveAll = {this.handleRemoveAll} />
+                    <ShoppingCart cartArr = {cart}
+                                  handleRemoveItem = {this.handleRemoveItem} />
                 </main>
             </div>
         )

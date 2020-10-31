@@ -9,6 +9,7 @@ class ShoppingCart extends Component {
                 <th>Item</th>
                 <th>Unit Price</th>
                 <th>Total Price</th>
+                <th></th>
             </tr>
         )
     }
@@ -21,6 +22,7 @@ class ShoppingCart extends Component {
                     <td>{cart.item}</td>
                     <td>${cart.price}</td>
                     <td>${cart.quantity * cart.price}</td>
+                    <td><button className="button_remove_item" onClick={() => this.props.handleRemoveItem(index)}>Remove Item</button></td>
                 </tr>
             )
         )

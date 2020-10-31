@@ -1,0 +1,15 @@
+button {
+    color: $white;
+    border: none;
+    font-weight: bold;
+    padding: $default_pad;
+    border-radius: 5%;
+    cursor: pointer;
+    margin-bottom: 5px;
+}
+.button_add, .button_remove_item {
+    background-color: $btn_color;
+}
+.button_remove_all {
+    background-color: $dark_color;
+}
